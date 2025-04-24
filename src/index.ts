@@ -3,6 +3,8 @@ import { config as _config } from 'dotenv'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import AuthRoutes from './routes/auth.routes'
+import TasksRoutes from './routes/tasks.routes'
+import verifyMiddleware from './middlewares/verify.middleware'
 class App {
     public app: express.Application
 
@@ -21,6 +23,7 @@ class App {
     }
     intializeRoutes() {
         this.app.use('/api/auth', AuthRoutes)
+        this.app.use('/api/tasks',verifyMiddleware ,TasksRoutes)
         
     }
 
