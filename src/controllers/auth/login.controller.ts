@@ -1,4 +1,4 @@
-import { asyncHandler, Response, loginFunction } from "../utils";
+import { asyncHandler, Response, loginFunction } from "../../utils";
 import { z as zod } from 'zod'
 
 import dotenv from 'dotenv';

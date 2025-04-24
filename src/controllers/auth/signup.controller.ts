@@ -1,6 +1,6 @@
-import { asyncHandler,Response,loginFunction } from "../utils";
+import { asyncHandler,Response,loginFunction } from "../../utils";
 import bcrypt from "bcrypt";
-import { signUpUsers } from "../db";
+import { signUpUsers } from "../../db";
 import {z as zod} from "zod";
 import dotenv from "dotenv";
 import {v4 as uuidv4} from "uuid";
@@ -14,7 +14,7 @@ const signUpSchema = zod.object({
     password: zod.string().min(8),
 })
 
-const signUpFunction = asyncHandler(async (req, res) => {
+const signup = asyncHandler(async (req, res) => {
     const parsedData = signUpSchema.safeParse(req.body);
     if (!parsedData.success) {
         return res.status(400).json(new Response(400, "Validation failed", parsedData.error.errors));
@@ -46,3 +46,4 @@ const signUpFunction = asyncHandler(async (req, res) => {
 
 
 })
+export default signup;

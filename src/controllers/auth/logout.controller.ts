@@ -1,4 +1,4 @@
-import { asyncHandler, Response } from "../utils";
+import { asyncHandler, Response } from "../../utils";
 
 const logout = asyncHandler(async (req, res) => {
     res.clearCookie("token", {
