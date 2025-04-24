@@ -7,3 +7,12 @@ export interface SignUpUsers {
     createdAt:Date
     updatedAt:Date
 }
+
+export interface Tasks {
+    id:string
+    userId:string
+    title:string
+    description:string
+    createdAt:Date
+    updatedAt:Date
+}
